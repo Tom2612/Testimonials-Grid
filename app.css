@@ -1,0 +1,136 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background-color: hsl(210, 46%, 95%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#container{
+    width: 100%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 30px;
+}
+.bubble{
+    max-width: 340px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 25px 35px;
+    border: none;
+    border-radius: 10px;
+    background-color: crimson;
+    box-shadow: 10px 10px 35px -16px rgb(0, 0, 0);
+}
+.bubble header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.profilepic{
+    width: 10%;
+    min-width: 33.3px;
+    border-radius: 50%;
+    border: 2px solid hsla(0, 0%, 100%, 0.5);
+}
+.info{
+    padding-left: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color: hsl(0, 0%, 100%);
+    font-size: 1rem;
+    font-weight: 500;
+}
+h3{
+    color: hsla(0, 0%, 100%, 0.5);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+.outline{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    color:hsl(0, 0%, 100%);
+    font-weight: 500;
+}
+.quote{
+    color: hsl(0, 0%, 100%, 0.7);
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.2rem;
+    margin-bottom: 10px;
+}
+#bubble1{
+    background-color: hsl(263, 55%, 52%);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+    background-size: 110px;
+}
+#bubble2{
+    background-color: hsl(217, 19%, 35%);
+}
+#bubble3, #bubble5{
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(219, 29%, 14%);
+}
+#bubble3 h2, #bubble3 .outline, #bubble5 h2, #bubble5 .outline{
+    color: hsl(219, 29%, 14%);
+}
+#bubble3 .quote, #bubble3 h3, #bubble5 .quote, #bubble5 h3{
+    color: hsl(219, 29%, 14%, 0.7)
+}
+#bubble4{
+    background-color: hsl(219, 29%, 14%);
+}
+#bubble4 .profilepic{
+    border: 2px solid hsl(263, 55%, 52%, 0.5);
+}
+@media (min-width: 900px){
+    main{
+        margin: 50px auto;
+    }
+    #container{
+        width: 80%;
+        height: 100%;
+        margin: auto auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+        "one one two three"
+        "four five five three";
+        gap: 20px;
+    }
+    .bubble{
+        max-width: 100%;
+    }
+    #bubble1{
+        grid-area: one;
+        background-position: top right 25%;
+        background-size: 130px;
+    }
+    #bubble2{
+        grid-area: two;
+    }
+    #bubble5{
+        grid-area: three;
+    }
+    #bubble3{
+        grid-area: four;
+    }
+    #bubble4{
+        grid-area: five;
+    }
+}
